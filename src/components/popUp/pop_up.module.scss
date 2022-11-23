@@ -1,0 +1,67 @@
+@import '../../mixin.scss';
+
+.pop_up_container{
+    position: fixed;
+    z-index: 100;
+    top: 0;
+    left: 0;
+    background: rgba($color: #000000, $alpha: 0.8);
+    backdrop-filter: blur(10px);
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: 0.3s ease-in-out;
+    
+    .pop_up{
+        position: relative;
+        background: $blocks;
+        pointer-events:visible;
+        height: 70%;
+        border-radius: 20px;
+        width: 80%;
+        max-width: 600px;
+        @include adaptiv("padding", 20, 10);
+        .pop_up_section{
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            margin-top: 20px;
+            width: 100%;
+            height: 100%;
+            row-gap: 15px;
+            @include adaptiv("font-size", 20, 16);
+        }
+    }
+    .close{
+        position: absolute;
+        cursor: pointer;
+        right: 5px;
+        top: 5px;
+        border-radius: 20px;
+        background: $detailsS;
+        width: 40px;
+        height: 40px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        &::before, &::after{
+            content: '';
+            position: absolute;
+            width: 30px;
+            height: 2px;
+            background: #FFFFFF;
+        }
+        &::before{
+            transform: rotate(45deg);
+        }
+        &::after{
+            transform: rotate(-45deg);
+
+        }
+    }
+}
+.pop_up_close{
+    top: -100%;
+}

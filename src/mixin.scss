@@ -1,0 +1,16 @@
+
+$bg: #0F0E0E;
+$blocks: #191919;
+$details: #3F0071;
+$detailsS: #00ADB5;
+$text: #EEEEEE;
+$border: 3px solid #0F0E0E;
+$shadow: rgba($color: #FFFFFF, $alpha: 0.1) 0 2px 10px;
+
+@mixin adaptiv($property, $startSize, $minSize) {
+    $addSize: $startSize - $minSize;
+    #{$property}: $startSize + px;
+    @media(max-width: 1140px) {
+        #{$property}: calc(#{$minSize + px} + #{$addSize} * ((100vw - 320px) / (1140 - 320)));
+    }
+}

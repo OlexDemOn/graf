@@ -1,0 +1,34 @@
+@import '../../mixin.scss';
+
+
+.table_container{
+    width: 100%;
+    overflow-x: auto;
+}
+.table{
+    width: 100%;
+    white-space: nowrap;  
+
+}
+
+.first_line{
+    >*{
+        font-weight: 600;
+        @include adaptiv("font-size", 16, 12);
+        border: $border;
+        @include adaptiv("padding", 10, 5);
+        cursor: pointer;
+        transition: 0.3s;
+        min-width: 100px;
+        &:hover{
+            background: $details;
+        }
+    }
+}
+
+.table_data{
+    border: $border;
+    @include adaptiv("padding", 10, 5);
+    @include adaptiv("font-size", 16, 12);
+    height: 10px;
+}

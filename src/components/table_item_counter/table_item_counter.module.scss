@@ -1,0 +1,11 @@
+@import '../../mixin.scss';
+
+.table_container{
+    max-width: 320px;
+    height: 10px;
+    td, tr{
+        border: $border;
+        padding: 15px;
+    }
+    
+}

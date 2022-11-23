@@ -1,0 +1,88 @@
+@import '../../mixin.scss';
+
+.input_data{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba($color: #000000, $alpha: 0.8);
+    backdrop-filter: blur(10px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: 0.3s ease-in-out;
+    .input_data_open{
+        position: absolute;
+        width: 30px;
+        height: 30px;
+        background: rgba($color: #000000, $alpha: 0.8);
+        backdrop-filter: blur(10px);
+        border-radius: 20px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        right: -30px;
+        top: 0;
+        cursor: pointer;
+    }
+    .input_data_block{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        max-width: 100%;
+        @include adaptiv("padding", 20, 10);
+        row-gap: 15px;
+        label{
+            position: relative;
+            @include adaptiv("font-size", 24, 16);
+            cursor: pointer;
+            font-weight: 600;
+        }
+        .input_block{
+            display: flex;
+            align-items: center;
+            margin-top: 10px;
+            font-size: 16px;
+            font-weight: 400;
+            span{
+                margin-left: 15px;
+                
+            }
+            input[type="file"] {
+                opacity: 0;
+                position: absolute;
+                z-index: -1;
+
+            }
+            .input_block_button{
+                border: 2px solid $detailsS;
+                padding: 10px;
+                transition: 0.1s ease-in-out;
+                &:hover{
+                    color: $detailsS;
+                }
+            }
+        }
+        .parse, .parse_active{
+            cursor: pointer;
+            border: 2px solid #FF6464;
+            padding: 10px;
+            transition: 0.1s ease-in-out;
+            &:hover{
+                color: #FF6464;
+            }
+        }
+        .parse_active{
+            border: 2px solid #A2D5AB;
+            &:hover{
+                color: #A2D5AB;
+            }
+        }
+        
+    }
+    
+}
+.close_input_data{
+    left: -100%;
+}
